@@ -1,0 +1,42 @@
+package com.example.myfitnessapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.app.Activity;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.List;
+
+public class MainActivity extends  Activity {
+
+    //Applying our logic used in another java class to this one//
+    private WorkoutExpert expert=new WorkoutExpert();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+
+    public void onClickMain(View view)
+    {
+        TextView textView=(TextView) findViewById(R.id.textView);
+        Spinner  spinner=(Spinner) findViewById(R.id.spinner);
+        //Storing upper value in a variable//
+        String workout=String.valueOf(spinner.getSelectedItem()); //workout is just another variable//
+        //textView.setText(workout);
+        List <String> workoutList = expert.getWorkouts(workout);
+        StringBuilder workoutFormatted = new StringBuilder();
+        for (String work:workoutList)
+        {
+            workoutFormatted.append(work).append('\n');
+
+        }
+
+        textView.setText(workoutFormatted);
+    }
+}
