@@ -1,0 +1,50 @@
+List <String> getWorkouts (String workouttypes)
+  {
+      List <String> workout=new ArrayList<String>();
+
+         if(workouttypes.equals("Chest"))
+         {
+             workout.add("Bench Press");
+             workout.add("Cable Plys");
+         }
+         else if (workouttypes.equals("Back"))
+         {
+             workout.add("Bent Over Dumbbell Row");
+             workout.add("Seating Rows");
+             workout.add("Dead Lifts");
+         }
+         else if (workouttypes.equals("Shoulders"))
+         {
+             workout.add("Shoulder Press");
+             workout.add("Dumbbell Lateral Raise");
+             workout.add("Bent-Over Dumbbell Lateral Raise");
+
+         }
+         else  if (workouttypes.equals("Legs"))
+         {
+             workout.add("Squats");
+             workout.add("Leg Press");
+             workout.add("Lunges");
+         }
+         else if (workouttypes.equals("Biceps"))
+         {
+             workout.add("Incline inner-biceps curl");
+             workout.add("EZ bar curl");
+             workout.add("Zottman curl");
+         }
+         else if (workouttypes.equals("Triceps"))
+         {
+             workout.add("Triceps Dips");
+             workout.add("Bench Dips");
+             workout.add("Diamond Push-Ups");
+
+         }
+         else  if (workouttypes.equals("Cardio"))
+         {
+             workout.add("Plank");
+             workout.add("Pendulum Legs");
+             workout.add("Mountain Climbers");
+             workout.add("Straight Leg Bicycle");
+         }
+         return workout;
+         }
